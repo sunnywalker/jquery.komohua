@@ -6,6 +6,8 @@
 
 **Browser support:** Chrome 1+, Firefox 1+, Internet Explorer 9+, Opera 8+, Safari 3+.
 
+**Demo:** [Komohua Demo](http://hilo.hawaii.edu/js/jquery.komohua/demo.html)
+
 ## *Hana* (Usage)
 
 *Aia ka hana a Komohua iā UTF-8. Hiki paha ke hana pū ma waho akā ʻaʻole i paʻani pēla.*
