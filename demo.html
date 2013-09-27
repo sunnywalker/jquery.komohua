@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Komohua: Character Injection</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<style>
+	/* page styling for the demo--not needed for the plugin */
+	*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+	body, html { font-size: 100%; padding: 0; margin: 0; font-family: serif; -webkit-font-smoothing: antialiased; color: #222; background-color: #fbfaf7; }
+	header { background-color: #c00; background-image: -webkit-linear-gradient(top, #c00, #600); background-image: linear-gradient(top, #c00, #600); color: white; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); padding: 0.5em 0; }
+	header h1 { margin: 0; padding: 0; }
+	header p { margin-top: 0; padding-top: 0; font-style: italic; }
+	.container > div { max-width: 40em; margin: 0 auto; }
+	main { margin-bottom: 2em; }
+	h2 { border: 1px solid #444; border-width: 1px 0; margin: 2em 0 1em 0; padding: 0.5em 0; text-align: center; font-family: sans-serif; }
+	label { font-family: sans-serif; }
+	input, textarea { font-family: inherit; font-size: inherit; }
+	textarea { width: 100%; }
+	.notice { color: #f63; font-size: 1.3em; }
+	.info { font-size: 1.2em; }
+	pre, code { font-family: Menlo, Consolas, monospace; background-color: white; border: 1px solid #ccc; padding: 3px; border-radius: 3px; white-space: pre-wrap; }
+	table { border-collapse: collapse; border: 1px solid #ccc; }
+	th, td { border: 1px solid #eee; padding: 5px; }
+	th { background-color: #eee; }
+
+	/* sample styling for the plugin's elements -- modify to your taste */
+	.injectors { font-size: 0.8em; }
+	.inject, .inject-helper { cursor: pointer; text-align: center; text-decoration: none; color: #222; border-radius: 3px; border: 1px solid #ddd; border-width: 1px 1px 2px 1px; background-color: #eee; margin-right: 3px; padding: 2px 4px; background-image: -webkit-radial-gradient(center 25%, circle cover, #f8f8f8, #eee); background-image: radial-gradient(center 25%, circle cover, #f8f8f8, #eee); min-width: 1.5em; display: inline-block; text-align: center; }
+	.inject:hover, .inject:focus, .inject-helper:hover, .inject-helper:focus { background-color: #ff0; border-color: #c10202; background-image: -webkit-radial-gradient(center 25%, circle cover, #ffe, #ff6); background-image: radial-gradient(center 25%, circle cover, #ffe, #ff6); }
+	</style>
+</head>
+<body>
+<header class="container">
+	<div>
+		<h1>Komohua: Character Injection</h1>
+		<p>A jQuery plugin for inserting characters into HTML inputs and textareas.</p>
+	</div>
+</header>
+<main class="container">
+	<div>
+		<p class="info">Komohua is a jQuery (1.7+) plugin which adds Hawaiian (or other) character injector buttons to HTML input and textareas, along with optional helper functions. <strong>Note that many fonts do not support the full range of Hawaiian letters, particularly the ʻokina.</strong></p>
+		<h2>Download</h2>
+		<p><a href="https://github.com/sunnywalker/jquery.komohua">jquery.komohua on GitHub</a></p>
+		<h2>Sample Basic Usage</h2>
+		<script>(function(){var i=document.createElement('textarea');if(typeof i.selectionStart!=='number'){document.write('<p class="notice">This browser does not have the capabilities necessary for this plugin (IE 9+ is supported).</p>');}})();</script>
+		<pre>$('#input').komohua();</pre>
+		<p><label for="input">Input:</label> <input type="text" size="20" id="input"></p>
+		<h2>Sample with Additional Options</h2>
+		<pre>$('#textarea').komohua({container_loc: 'before', container_tag: 'div'});</pre>
+		<p><label for="textarea">Textarea:</label> <textarea id="textarea" rows="4">'Olelo Hawai`i should be ʻŌlelo Hawaiʻi</textarea></p>
+	</div>
+</main>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="jquery.komohua.js"></script>
+<script>
+$('h1,#input').komohua();
+$('#textarea').komohua({container_loc: 'before', container_tag: 'div'});
+</script>
+</body>
+</html>
