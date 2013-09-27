@@ -25,6 +25,9 @@
 	table { border-collapse: collapse; border: 1px solid #ccc; }
 	th, td { border: 1px solid #eee; padding: 5px; }
 	th { background-color: #eee; }
+	@media screen and (max-width: 30em) {
+		.container > div { padding-left: 4px; padding-right: 4px; }
+	}
 
 	/* sample styling for the plugin's elements -- modify to your taste */
 	.injectors { font-size: 0.8em; }
@@ -47,10 +50,10 @@
 		<h2>Sample Basic Usage</h2>
 		<script>(function(){var i=document.createElement('textarea');if(typeof i.selectionStart!=='number'){document.write('<p class="notice">This browser does not have the capabilities necessary for this plugin (IE 9+ is supported).</p>');}})();</script>
 		<pre>$('#input').komohua();</pre>
-		<p><label for="input">Input:</label> <input type="text" size="20" id="input"></p>
+		<p><label for="input">Input:</label> <input type="text" size="20" id="input" autocorrect="off"></p>
 		<h2>Sample with Additional Options</h2>
 		<pre>$('#textarea').komohua({container_loc: 'before', container_tag: 'div'});</pre>
-		<p><label for="textarea">Textarea:</label> <textarea id="textarea" rows="4">'Olelo Hawai`i should be ʻŌlelo Hawaiʻi</textarea></p>
+		<p><label for="textarea">Textarea:</label> <textarea id="textarea" rows="4" autocorrect="off">'Olelo Hawai`i should be ʻŌlelo Hawaiʻi</textarea></p>
 	</div>
 </main>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
