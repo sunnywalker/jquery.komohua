@@ -4,6 +4,8 @@
 
 *Komohua* is a jQuery (1.7+) plugin which adds Hawaiian character injectors to HTML input and textareas, along with optional helper functions. **Note that many fonts do not support the full range of Hawaiian letters, particularly the ʻokina.**
 
+**Browser support:** Chrome 1+, Firefox 1+, Internet Explorer 9+, Opera 8+, Safari 3+.
+
 ## *Hana* (Usage)
 
 *Aia ka hana a Komohua iā UTF-8. Hiki paha ke hana pū ma waho akā ʻaʻole i paʻani pēla.*
