@@ -52,15 +52,27 @@
 		<pre>$('#input').komohua();</pre>
 		<p><label for="input">Input:</label> <input type="text" size="20" id="input" autocorrect="off"></p>
 		<h2>Sample with Additional Options</h2>
-		<pre>$('#textarea').komohua({container_loc: 'before', container_tag: 'div'});</pre>
+		<pre>$('#textarea').komohua({
+  chars: 'āēīōūĀĒĪŌŪʻ',
+  container_loc: 'before',
+  container_tag: 'div'
+});</pre>
 		<p><label for="textarea">Textarea:</label> <textarea id="textarea" rows="4" autocorrect="off">'Olelo Hawai`i should be ʻŌlelo Hawaiʻi</textarea></p>
+		<h2>Removing The Helper</h2>
+		<pre>$('#input-nohelp').komohua({helpers:[]});</pre>
+		<p><label for="input-nohelp">Input:</label> <input type="text" id="input-nohelp" autocorrect="off"></p>
 	</div>
 </main>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="jquery.komohua.js"></script>
 <script>
-$('h1,#input').komohua();
-$('#textarea').komohua({container_loc: 'before', container_tag: 'div'});
+$('h1,#input').komohua(); // note h1 is in the selector list but does not get the injectors because it's an invalid element
+$('#textarea').komohua({
+	chars: 'āēīōūĀĒĪŌŪʻ',
+	container_loc: 'before',
+	container_tag: 'div'
+});
+$('#input-nohelp').komohua({helpers:[]});
 </script>
 </body>
 </html>

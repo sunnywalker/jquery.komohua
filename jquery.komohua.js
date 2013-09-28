@@ -6,25 +6,7 @@
 				container_loc:   'after',       // where to place the injector container relative to the input
 				container_tag:   'span',        // container tag
 				helpers:         [              // additional buttons as definable helper functions
-					{
-						label: 'Switch to ʻokina',
-						tooltip: 'Convert tick, backtick, and left single quote characters to the ʻokina in the selected text (or all if nothing is selected)',
-						action: function() {
-							var s = this[0].selectionStart, e = this[0].selectionEnd; // remember the selection start
-							if (s!==e) { // only apply the fix in the selected text if there is a selection
-								var val = this.val(),
-									inner = val.substring(s, e),
-									pre = val.substring(0, s),
-									post = val.substring(e, val.length);
-								this.val(pre + inner.replace(/`|'|‘/g, 'ʻ') + post);
-							} else { // no selection, so apply to the whole thing
-								this.val(this.val().replace(/`|'|‘/g, 'ʻ')); // convert backtick, tick, left single quote to ʻokina
-							}
-							this[0].selectionStart = s; // put the selection back
-							this[0].selectionEnd = e;
-							this.focus(); // focus back on the input
-						}
-					}
+					$.fn.komohua.okina_helper
 				],
 				helpers_class:   'inject-helper', // class for helpers
 				injector_class:  'inject',      // injector class
@@ -67,4 +49,29 @@
 			} // if valid element type
 		});
 	}; // $.fn.komohua()
+
+	$.fn.komohua.supported = function() { // does the browser have the needed feature(s)?
+		var t = document.createElement('textarea');
+		return typeof t.selectionStart==='number';
+	};
+
+	$.fn.komohua.okina_helper = { // helper to convert placeholder ʻokina to the real thing
+		label: 'Switch to ʻokina',
+		tooltip: 'Convert tick, backtick, and left single quote characters to the ʻokina in the selected text (or all if nothing is selected)',
+		action: function() {
+			var s = this[0].selectionStart, e = this[0].selectionEnd; // remember the selection start
+			if (s!==e) { // only apply the fix in the selected text if there is a selection
+				var val = this.val(),
+					inner = val.substring(s, e),
+					pre = val.substring(0, s),
+					post = val.substring(e, val.length);
+				this.val(pre + inner.replace(/`|'|‘/g, 'ʻ') + post);
+			} else { // no selection, so apply to the whole thing
+				this.val(this.val().replace(/`|'|‘/g, 'ʻ')); // convert backtick, tick, left single quote to ʻokina
+			}
+			this[0].selectionStart = s; // put the selection back
+			this[0].selectionEnd = e;
+			this.focus(); // focus back on the input
+		}
+	};
 })(jQuery);

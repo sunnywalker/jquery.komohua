@@ -26,7 +26,7 @@
   <input type="text" id="input">
 </p>
 <script src="/path/to/jquery.js"></script>
-<script src="/path/to/komohua.js"></script>
+<script src="/path/to/jquery.komohua.js"></script>
 <script>$('#input').komohua();</script>
 ```
 
@@ -38,11 +38,12 @@
   <textarea id="textarea" rows="4">'Olelo Hawai`i should be ʻŌlelo Hawaiʻi</textarea>
 </p>
 <script src="/path/to/jquery.js"></script>
-<script src="/path/to/komohua.js"></script>
+<script src="/path/to/jquery.komohua.js"></script>
 <script>
 $('#textarea').komohua({
-  container_loc: 'before',
-  container_tag: 'div'
+  chars: 'āēīōūĀĒĪŌŪʻ', // different list of characters
+  container_loc: 'before', // display the injectors before the textarea
+  container_tag: 'div' // contain the injectors in a div
 });
 </script>
 ```
@@ -61,7 +62,7 @@ $('#textarea').komohua({
 | `injector_params` | string | href="#" | Additional parameters added to the injector buttons tag |
 | `injector_tag` | string | a | Tag name of the injector buttons |
 
-## *Nā Hana Kōkua* (Helpers) {#helpers}
+## *Nā Hana Kōkua* (Helpers)    {#helpers}
 
 *Hiki ke haku i kekahi hana kōkua (ʻo Helpers) no ka hana ʻokoʻa ma waena i na pihi Komohua, me ke kaila pū o ia mea.*
 
@@ -79,11 +80,12 @@ var helpers = [{
 
     // functionality of the button goes here
     // "this" has the context of the input/textarea element
-  }
+  },
+  $.fn.komohua.okina_helper // also include the ʻokina helper as well
 }];
 ```
 
-### *ʻO Switch to ʻOkina* (Default Built-in Helper)
+### *ʻO Switch to ʻOkina* (Included Helper)
 
 *ʻO Switch to ʻOkina ka hana kōkua no ka hoʻololi i nā mea ʻokina like (', \`, ‘) i ka ʻokina mauli.*
 
@@ -92,6 +94,20 @@ The default helper is a button which will convert ticks ', backticks \`, and lef
 *Ke koho i kekahi māhele o ke kikokikona, e hoʻololi wale nō ana ʻo Switch to ʻOkina i loko o nā mea i koho, akā ke koho ʻole, e hoʻololi ana i na huapalapala like ʻokina a pau.*
 
 If there is no selected text in the input, all such characters will be converted; but if there is a selection, only such characters in the selected text will be converted.
+
+*Ke makemake ʻole iā Switch to ʻOkina, e kāhea iā Komohua e like me kēia.*
+
+If you do not want the included helper, call Komohua as follows.
+
+```html
+$('#selector').komohua({helpers: []});
+```
+
+## *Nā Mea ʻOkoʻa* (Other Features)
+
+*Inā kāhea iā `$.fn.komohua.supported()`, puka mai ka hiki o Komohua i loko o ia browser.*
+
+You can test if Komohua will work in the browser by calling `$.fn.komohua.supported()`.
 
 ## License
 
