@@ -1,0 +1,26 @@
+{
+    "name": "komohua",
+    "description": "Add Hawaiian (or other) character injectors to HTML input and textareas, along with optional helper functions.",
+    "keywords": [
+        "hawaiian",
+        "keyboard",
+        "insert",
+        "language"
+    ],
+    "authors": [
+        {
+            "name": "Sunny Walker",
+            "homepage": "http://www.miraclesalad.com/"
+        }
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/sunnywalker/jquery.komohua",
+    "version": "1.0.0",
+    "dependencies": {
+        "jquery": ">=1.7"
+    },
+    "main": "jquery.komohua.js",
+    "ignore": [
+        "**/.*"
+    ]
+}

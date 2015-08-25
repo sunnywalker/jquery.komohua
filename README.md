@@ -8,6 +8,8 @@
 
 **Demo:** [Komohua Demo](http://hilo.hawaii.edu/js/jquery.komohua/demo.html)
 
+![animated demo](http://i.imgur.com/PBWLEYG.gif)
+
 ## *Hana* (Usage)
 
 *Aia ka hana a Komohua iā UTF-8. Hiki paha ke hana pū ma waho akā ʻaʻole i paʻani pēla.*
